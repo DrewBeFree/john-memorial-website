@@ -1202,6 +1202,20 @@
     // Slideshow interactive controller
     document.addEventListener('DOMContentLoaded', () => {
       const slides = document.querySelectorAll('.slide');
+      const sliderDotsContainer = document.getElementById('slider-dots');
+      
+      // Dynamically generate navigation dots based on slides present
+      sliderDotsContainer.innerHTML = '';
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => {
+          updateSlide(i);
+          resetAutoplay();
+        });
+        sliderDotsContainer.appendChild(dot);
+      });
+
       const dots = document.querySelectorAll('.slide-dot');
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
@@ -1252,12 +1266,7 @@
         resetAutoplay();
       });
 
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          updateSlide(index);
-          resetAutoplay();
-        });
-      });
+
 
       // autoplay setup
       function startAutoplay() {
