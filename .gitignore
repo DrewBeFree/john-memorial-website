@@ -1,0 +1,16 @@
+# Local/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# Generated preview artifacts
+preview-*.png
+
+# Dependency/build outputs if this later becomes framework-based
+node_modules/
+dist/
+build/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="In loving memory of John Fitzrobert Webb — beloved son, brother, musician, and friend." />
+  <title>John Fitzrobert Webb | In Loving Memory</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f7f2e8;
+      --paper-2: #fbf8f1;
+      --ink: #1e1a17;
+      --muted: #70665d;
+      --soft: #a69a8e;
+      --line: rgba(52, 42, 34, 0.14);
+      --terracotta: #b96549;
+      --terracotta-dark: #7f3f31;
+      --gold: #caa85a;
+      --sage: #7d8a72;
+      --blue: #7586a6;
+      --lavender: #a792b8;
+      --charcoal: #171411;
+      --ivory: #fffaf1;
+      --shadow: 0 24px 80px rgba(66, 48, 32, 0.16);
+      --max: 1180px;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 9% 8%, rgba(250, 214, 89, .20), transparent 27rem),
+        radial-gradient(circle at 95% 15%, rgba(117, 134, 166, .20), transparent 29rem),
+        linear-gradient(180deg, var(--paper), #efe7dc 58%, #e7ded1);
+      font-family: var(--sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .42;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(85, 64, 42, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(85, 64, 42, .035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, #000, transparent 85%);
+    }
+
+    a { color: inherit; }
+
+    .nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(calc(100% - 32px), var(--max));
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 12px 10px 18px;
+      border: 1px solid rgba(62, 48, 38, .14);
+      border-radius: 999px;
+      background: rgba(255, 250, 241, .78);
+      backdrop-filter: blur(20px) saturate(145%);
+      box-shadow: 0 14px 50px rgba(55, 39, 26, .10);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #3a2f29;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--ivory);
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      box-shadow: 0 0 0 5px rgba(185, 101, 73, .10);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(30, 26, 23, .72);
+      transition: background .25s ease, color .25s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(30, 26, 23, .06);
+      color: var(--ink);
+    }
+
+    .hero {
+      min-height: min(980px, 100svh);
+      display: grid;
+      align-items: start;
+      padding: clamp(130px, 13vh, 170px) 24px clamp(72px, 9vh, 112px);
+      position: relative;
+    }
+
+    .hero-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: clamp(38px, 6vw, 88px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 250, 241, .62);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(202, 168, 90, .16);
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(4.25rem, 10vw, 9.6rem);
+      line-height: .84;
+      letter-spacing: -.055em;
+      font-weight: 700;
+      color: #211914;
+      text-wrap: balance;
+    }
+
+    .hero-subtitle {
+      max-width: 620px;
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: clamp(1.1rem, 1.8vw, 1.36rem);
+      line-height: 1.65;
+      text-wrap: pretty;
+    }
+
+    .hero-subtitle strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 36px 0 42px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .button.primary {
+      color: var(--ivory);
+      background: linear-gradient(135deg, var(--terracotta), #9b533e);
+      box-shadow: 0 14px 38px rgba(185, 101, 73, .28), inset 0 1px 0 rgba(255,255,255,.20);
+    }
+
+    .button.secondary {
+      color: #302822;
+      background: rgba(255, 250, 241, .72);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 28px rgba(45, 34, 25, .08);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .memory-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 640px;
+    }
+
+    .memory-pill {
+      padding: 15px 16px;
+      border-radius: 20px;
+      background: rgba(255, 250, 241, .68);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 38px rgba(53, 39, 27, .06);
+    }
+
+    .memory-pill span {
+      display: block;
+      margin-bottom: 4px;
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--terracotta-dark);
+    }
+
+    .memory-pill small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      isolation: isolate;
+      width: min(100%, 560px);
+      margin-left: auto;
+    }
+
+    .portrait-wrap::before,
+    .portrait-wrap::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      z-index: -2;
+      filter: blur(4px);
+    }
+
+    .portrait-wrap::before {
+      width: 70%;
+      height: 70%;
+      right: -11%;
+      top: 3%;
+      background: rgba(117, 134, 166, .20);
+    }
+
+    .portrait-wrap::after {
+      width: 58%;
+      height: 58%;
+      left: -8%;
+      bottom: 2%;
+      background: rgba(202, 168, 90, .25);
+    }
+
+    .portrait-card {
+      position: relative;
+      padding: clamp(10px, 2vw, 16px);
+      border-radius: 46px;
+      background: rgba(255, 250, 241, .78);
+      border: 1px solid rgba(75, 58, 45, .16);
+      box-shadow: var(--shadow);
+      transform: rotate(1.3deg);
+      overflow: hidden;
+    }
+
+    .portrait-card::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 34px;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.80);
+      z-index: 2;
+    }
+
+    .portrait-card img {
+      width: 100%;
+      display: block;
+      border-radius: 34px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+    }
+
+    .caption-card {
+      position: absolute;
+      left: -24px;
+      bottom: 34px;
+      width: min(260px, 72%);
+      padding: 18px 18px 16px;
+      border-radius: 24px;
+      background: rgba(23, 20, 17, .90);
+      color: var(--ivory);
+      box-shadow: 0 22px 50px rgba(23, 20, 17, .24);
+      backdrop-filter: blur(18px);
+    }
+
+    .caption-card p {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.08;
+      font-weight: 600;
+    }
+
+    .caption-card span {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255, 250, 241, .70);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      padding: clamp(74px, 10vw, 132px) 24px;
+    }
+
+    .section-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 830px;
+      margin-bottom: 42px;
+    }
+
+    .kicker {
+      color: var(--terracotta-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.9rem, 7vw, 6.1rem);
+      line-height: .92;
+      letter-spacing: -.035em;
+      font-weight: 700;
+      color: #201915;
+      text-wrap: balance;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.6vw, 1.24rem);
+      line-height: 1.75;
+      text-wrap: pretty;
+    }
+
+    .tribute-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .tribute-card {
+      min-height: 260px;
+      padding: clamp(26px, 4vw, 42px);
+      border-radius: 34px;
+      background: rgba(255, 250, 241, .70);
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 70px rgba(68, 48, 32, .09);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tribute-card:nth-child(2) { background: rgba(244, 229, 198, .60); }
+    .tribute-card:nth-child(3) { background: rgba(232, 224, 236, .72); }
+    .tribute-card:nth-child(4) { background: rgba(226, 232, 218, .72); }
+
+    .tribute-card::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: .08;
+    }
+
+    .tribute-card h3 {
+      margin: 0 0 14px;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.4vw, 3.2rem);
+      line-height: .95;
+      letter-spacing: -.025em;
+      color: #2c211a;
+    }
+
+    .tribute-card p {
+      margin: 0;
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .obituary-section {
+      background: var(--charcoal);
+      color: var(--ivory);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .obituary-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(185, 101, 73, .28), transparent 30rem),
+        radial-gradient(circle at 86% 65%, rgba(117, 134, 166, .20), transparent 28rem);
+      opacity: .9;
+    }
+
+    .obituary-section .section-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .44fr .56fr;
+      gap: clamp(36px, 5vw, 76px);
+      align-items: start;
+    }
+
+    .obituary-section .kicker { color: #e1b47c; }
+    .obituary-section h2 { color: var(--ivory); }
+    .obituary-section .lead { color: rgba(255, 250, 241, .68); }
+
+    .obituary-card {
+      padding: clamp(28px, 5vw, 54px);
+      border-radius: 36px;
+      background: rgba(255, 250, 241, .075);
+      border: 1px solid rgba(255, 250, 241, .13);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 30px 100px rgba(0,0,0,.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .obituary-card p {
+      margin: 0 0 22px;
+      color: rgba(255, 250, 241, .78);
+      font-size: 17px;
+      line-height: 1.85;
+      text-wrap: pretty;
+    }
+
+    .obituary-card p:first-child {
+      color: var(--ivory);
+      font-family: var(--serif);
+      font-size: clamp(1.72rem, 3vw, 2.55rem);
+      line-height: 1.15;
+      letter-spacing: -.012em;
+    }
+
+    .obituary-card p:last-child { margin-bottom: 0; }
+
+    .quote-band {
+      padding: clamp(68px, 10vw, 116px) 24px;
+      background: linear-gradient(135deg, rgba(255,250,241,.94), rgba(242,229,207,.84));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quote {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5.8vw, 6rem);
+      line-height: .98;
+      letter-spacing: -.04em;
+      font-weight: 700;
+      color: #211915;
+      text-wrap: balance;
+    }
+
+    .quote span { color: var(--terracotta); }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .detail-card {
+      padding: clamp(28px, 4vw, 44px);
+      border-radius: 34px;
+      background: rgba(255, 250, 241, .70);
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 70px rgba(68, 48, 32, .09);
+    }
+
+    .detail-card h3 {
+      margin: 0 0 16px;
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 4vw, 3.8rem);
+      line-height: .95;
+      letter-spacing: -.03em;
+    }
+
+    .detail-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .detail-card strong { color: var(--ink); }
+
+    .survivors {
+      margin-top: 18px;
+      padding: clamp(28px, 4vw, 44px);
+      border-radius: 34px;
+      background: rgba(31, 26, 22, .92);
+      color: var(--ivory);
+      box-shadow: 0 24px 80px rgba(39, 28, 21, .16);
+      display: grid;
+      grid-template-columns: .36fr .64fr;
+      gap: 28px;
+    }
+
+    .survivors h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: .95;
+      letter-spacing: -.03em;
+    }
+
+    .survivors p {
+      margin: 0;
+      color: rgba(255, 250, 241, .72);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      padding: 56px 24px 80px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer .name {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1;
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: -.025em;
+    }
+
+    @media (max-width: 920px) {
+      .nav { position: absolute; }
+      .nav-links { display: none; }
+      .hero-inner,
+      .obituary-section .section-inner,
+      .survivors {
+        grid-template-columns: 1fr;
+      }
+      .portrait-wrap {
+        margin: 0 auto;
+        max-width: 520px;
+      }
+      .tribute-grid,
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+      .memory-strip {
+        grid-template-columns: 1fr;
+      }
+      .caption-card {
+        left: 18px;
+        bottom: 28px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding: 96px 16px 52px; }
+      .section, .quote-band { padding-left: 16px; padding-right: 16px; }
+      h1 { font-size: clamp(4.4rem, 21vw, 6rem); }
+      .portrait-card { border-radius: 34px; transform: none; }
+      .portrait-card img { border-radius: 25px; }
+      .caption-card { position: relative; left: auto; bottom: auto; width: auto; margin: -22px 18px 0; z-index: 4; }
+      .tribute-card, .detail-card, .survivors, .obituary-card { border-radius: 26px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Memorial navigation">
+    <div class="brand"><span class="brand-mark">J</span> In Loving Memory</div>
+    <div class="nav-links">
+      <a href="#life">His Life</a>
+      <a href="#obituary">Obituary</a>
+      <a href="#details">Service</a>
+      <a href="#give">Give</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Marietta, Georgia • 1987–2026</div>
+        <h1>John Fitzrobert Webb</h1>
+        <p class="hero-subtitle">
+          A beloved son, brother, musician, and friend whose <strong>joyful spirit, compassionate heart, unwavering faith,</strong> and extraordinary musical gift will be remembered always.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#obituary">Read John’s story</a>
+          <a class="button secondary" href="#details">Celebration details</a>
+        </div>
+        <div class="memory-strip" aria-label="John remembered as">
+          <div class="memory-pill"><span>Musician</span><small>Piano & drums</small></div>
+          <div class="memory-pill"><span>Friend</span><small>Loyal & kind</small></div>
+          <div class="memory-pill"><span>Faithful</span><small>Servant’s heart</small></div>
+        </div>
+      </div>
+
+      <div class="portrait-wrap" aria-label="Hero portrait of John Webb">
+        <div class="portrait-card">
+          <img src="assets/John.png" alt="Watercolor-style portrait of John Fitzrobert Webb smiling" />
+        </div>
+        <div class="caption-card">
+          <p>Everyone who met him loved him.</p>
+          <span>John Webb</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="life">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">A life that blessed others</div>
+          <h2>Creative, joyful, faithful, and deeply loved.</h2>
+          <p class="lead">John had an infectious smile, an engaging personality, and a genuine kindness that left a lasting impression on everyone who knew him.</p>
+        </div>
+
+        <div class="tribute-grid">
+          <article class="tribute-card" style="color: var(--terracotta);">
+            <h3>A gifted musician</h3>
+            <p>John was a talented pianist and drummer with the rare ability to play almost any song by ear and compose original music.</p>
+          </article>
+          <article class="tribute-card" style="color: var(--gold);">
+            <h3>A creative mind</h3>
+            <p>He could devote hours of focused attention to projects that captured his interest, bringing imagination and care to what he made.</p>
+          </article>
+          <article class="tribute-card" style="color: var(--lavender);">
+            <h3>A servant’s heart</h3>
+            <p>Despite his vibrant personality, John had a gentle spirit and always looked for ways to help others.</p>
+          </article>
+          <article class="tribute-card" style="color: var(--sage);">
+            <h3>A loyal friend</h3>
+            <p>He was fiercely loyal to those he loved and was, in turn, deeply loved by his many friends and family.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section obituary-section" id="obituary">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Obituary</div>
+          <h2>In loving memory.</h2>
+          <p class="lead">Published by the Marietta Daily Journal on July 2, 2026.</p>
+        </div>
+
+        <article class="obituary-card">
+          <p>Our beloved son John Fitzrobert Webb, 38, of Marietta, Georgia, passed away unexpectedly on June 24, 2026, in downtown Atlanta.</p>
+          <p>Born in 1987, John was a lifelong resident of Marietta. He attended The Walker School and Marietta High School before completing his education at Shelterwood in Colorado.</p>
+          <p>John loved sports and excelled as a baseball and soccer player. He was also an avid skateboarder and snowboarder during his younger years. Blessed with an exceptionally creative mind, John could devote hours of focused attention to projects that captured his interest.</p>
+          <p>Above all, John will be remembered as a gifted musician. A talented pianist and drummer, he possessed the rare ability to play almost any song by ear and to compose original music. Music was one of his greatest passions and brought joy not only to him but also to everyone who had the privilege of hearing him play.</p>
+          <p>John's infectious smile, engaging personality, and genuine kindness left a lasting impression on all who knew him. Despite his vibrant personality, he had a gentle spirit and a servant's heart, always looking for ways to help others. His unwavering faith in Jesus Christ shaped the way he lived, inspiring a deep love for family, friends, and everyone he encountered. He was fiercely loyal to those he loved and was, in turn, deeply loved by his many friends and family. Everyone who met him loved him.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote-band" aria-label="Memorial quote">
+      <div class="quote">His life was a blessing, and his memory will forever remain in the hearts of all who <span>knew and loved him.</span></div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Celebration and remembrance</div>
+          <h2>Gathering to remember John.</h2>
+        </div>
+
+        <div class="details-grid">
+          <article class="detail-card">
+            <h3>Celebration of Life</h3>
+            <p><strong>Wednesday, July 8, 2026 • 11:00 a.m.</strong><br />Stonebridge Church<br />675 Tower Road<br />Marietta, GA 30060</p>
+          </article>
+          <article class="detail-card" id="give">
+            <h3>In lieu of flowers</h3>
+            <p>Memorial contributions may be made to:<br /><strong>The Extension</strong><br />1507 Church Street Ext.<br />Marietta, GA 30060<br />(770) 590-9075</p>
+          </article>
+        </div>
+
+        <div class="survivors">
+          <h3>Survived by</h3>
+          <p>His parents, Robert and Sue Webb; his brother, Drew Webb; his aunt, Wendy Stroud and her husband, Shawn; his cousins, Dylan and Tyler, and Tyler's wife, Kayla; and many other cherished relatives and friends.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="name">John Fitzrobert Webb</span>
+    Beloved son, brother, musician, and friend • 1987–2026
+  </footer>
+</body>
+</html>
