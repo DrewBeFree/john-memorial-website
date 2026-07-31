@@ -6,16 +6,16 @@
 **Created:** 2026-07-31
 
 ## Current Status
-- Project initialized per workspace standardization and now versioned with local git.
+- Project initialized per workspace standardization and versioned with local git.
 - Obituary text saved to `content/obituary.txt`.
 - Premium public memorial website created at `index.html` using the supplied watercolor portrait as the hero image.
 - Hero image copied to `assets/John.png` from WebUI attachment `/home/drew/.hermes/webui/attachments/93bf2a5a1914/John.png`.
-- Current design direction: top-of-the-line, art-forward, warm editorial memorial site with polished typography, responsive layout, hero portrait, obituary, celebration details, donation information, and survivors section.
-- New content direction: this will be a QR-code destination from a poster at a tribute concert for John at Ponce City Market in Atlanta.
-- The July 8 memorial service is in the past; copy must not present it as an upcoming event.
-- Include a prominent sincere thanks to David Collins Band and Shatoya.
-- Include the memorial service video link: `https://vimeo.com/event/6037295/dece23c342?fl=so&fe=fs`.
-- Create a slideshow experience using only curated public-safe images.
+- Current design direction: top-of-the-line, art-forward, warm editorial memorial site with polished typography, responsive layout, hero portrait, QR-code concert context, slideshow, memorial service video link, obituary, donation information, and survivors section.
+- New content direction implemented: this is a QR-code destination from a poster at a tribute concert for John at Ponce City Market in Atlanta.
+- The July 8 memorial service is treated as a past event; copy no longer presents it as upcoming.
+- Prominent sincere thanks added for David Collins Band and Shatoya.
+- Memorial service video link added: `https://vimeo.com/event/6037295/dece23c342?fl=so&fe=fs`.
+- First-pass slideshow experience added with hero portrait + text slides. Real photo slides are pending because `/mnt/data/Documents/12-john/memorial-photos/` currently contains only `.gitkeep`.
 - This is intended to be a separate public site on a different subdomain or possibly its own full domain; do not treat it as a subpath of the private `john-share` investigation archive.
 - Source materials (memorial-photos, evidence-photos, static HTML scaffolding) exist in `/mnt/data/Documents/12-john/`.
 - `memorial-photos/` and `.private/` curation rules apply: keep sensitive/private items filesystem-only unless explicitly requested for public site.
@@ -28,22 +28,23 @@
 - See `VERSIONING.md`.
 
 ## Tasks
-- Backlog created in `TASKS.md`.
-- Immediate priorities: revise QR/concert-facing copy, thank David Collins Band and Shatoya, add Vimeo memorial service video link, build slideshow, curate public images.
+- Backlog maintained in `TASKS.md`.
+- Completed: QR/concert-facing copy, David Collins Band and Shatoya thanks, Vimeo memorial service video card/link, first-pass slideshow shell, updated hero CTA hierarchy, historical memorial-service wording.
+- Still open: curate public photo set, add final captions, choose launch domain/subdomain, generate production QR code.
 
 ## Verification
-- `index.html` written successfully: 23,109 bytes after premium redesign and favicon link.
+- `index.html` written successfully: 37,605 bytes after QR-code tribute concert revision.
 - `assets/John.png` exists and is a valid PNG: 1054 × 1405 RGB.
 - `assets/favicon.svg` added and linked.
 - Local HTML asset check passed: no missing local `src`/`href` references.
-- Temporary local preview served successfully on `127.0.0.1:41731`; preview server was stopped after verification.
-- Chrome headless screenshot captured at `preview-home.png`; visual inspection found no broken image, text overlap, or obvious contrast/layout problems.
+- Content checks passed for: `Ponce City Market`, `David Collins Band`, `Shatoya`, Vimeo memorial service URL, `View photo slideshow`, and `Watch memorial service`.
+- Temporary local preview served successfully on `127.0.0.1:41731`.
+- Chrome headless screenshot captured at `preview-home-updated.png`; visual inspection confirmed tribute concert context and thanks are visible above the fold/lower hero area, with no obvious broken image, text overlap, or contrast problem.
 
 ## Next Steps / Open Items
-- Implement the QR-code tribute concert revision from `TASKS.md`.
+- Curate public-safe real photos for slideshow. Current `memorial-photos/` folder has no usable images yet.
 - Decide final domain/subdomain and hosting target.
-- Curate public memorial content vs private investigation materials.
-- Add photo gallery/slideshow section using curated public images from `memorial-photos/`.
+- Generate QR code after final production URL is chosen.
 - Consider adding tribute / guestbook functionality. If public submissions are needed, static HTML will require a small server/backend or third-party form service.
 - Decide whether to keep this as static HTML or migrate into a framework before launch.
 - Read STATE.md before any work; append changes after each session.

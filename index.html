@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --paper: #f7f2e8;
@@ -140,7 +140,7 @@
       width: min(100%, var(--max));
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.02fr .98fr;
+      grid-template-columns: 1.05fr .95fr;
       gap: clamp(38px, 6vw, 88px);
       align-items: center;
     }
@@ -172,8 +172,8 @@
     h1 {
       margin: 24px 0 18px;
       font-family: var(--serif);
-      font-size: clamp(4.25rem, 10vw, 9.6rem);
-      line-height: .84;
+      font-size: clamp(4rem, 9.5vw, 9rem);
+      line-height: .86;
       letter-spacing: -.055em;
       font-weight: 700;
       color: #211914;
@@ -184,7 +184,7 @@
       max-width: 620px;
       margin: 0 0 30px;
       color: var(--muted);
-      font-size: clamp(1.1rem, 1.8vw, 1.36rem);
+      font-size: clamp(1.1rem, 1.8vw, 1.34rem);
       line-height: 1.65;
       text-wrap: pretty;
     }
@@ -206,7 +206,7 @@
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      padding: 0 18px;
+      padding: 0 22px;
       border-radius: 999px;
       text-decoration: none;
       font-size: 14px;
@@ -250,7 +250,7 @@
       display: block;
       margin-bottom: 4px;
       font-family: var(--serif);
-      font-size: 25px;
+      font-size: 24px;
       line-height: 1;
       font-weight: 700;
       color: var(--terracotta-dark);
@@ -268,7 +268,7 @@
     .portrait-wrap {
       position: relative;
       isolation: isolate;
-      width: min(100%, 560px);
+      width: min(100%, 540px);
       margin-left: auto;
     }
 
@@ -343,7 +343,7 @@
     .caption-card p {
       margin: 0;
       font-family: var(--serif);
-      font-size: 25px;
+      font-size: 24px;
       line-height: 1.08;
       font-weight: 600;
     }
@@ -406,6 +406,52 @@
       text-wrap: pretty;
     }
 
+    /* Concert Appreciation Area */
+    .concert-tribute {
+      background: linear-gradient(135deg, rgba(31, 26, 22, .96), rgba(45, 38, 32, .96));
+      color: var(--ivory);
+      border-radius: 42px;
+      padding: clamp(34px, 6vw, 64px);
+      box-shadow: var(--shadow);
+      margin-bottom: clamp(60px, 8vw, 100px);
+      border: 1px solid rgba(255, 250, 241, .12);
+      display: grid;
+      grid-template-columns: .38fr .62fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .concert-tribute h3 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 4.4rem);
+      line-height: .96;
+      letter-spacing: -.03em;
+      margin: 0;
+      color: var(--ivory);
+    }
+
+    .concert-tribute h3 span {
+      display: block;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .concert-tribute p {
+      margin: 0;
+      color: rgba(255, 250, 241, .74);
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      line-height: 1.75;
+    }
+
+    .concert-tribute p strong {
+      color: var(--ivory);
+      font-weight: 650;
+    }
+
     .tribute-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -456,6 +502,262 @@
       line-height: 1.75;
     }
 
+    /* Video Embed / Card Style */
+    .video-section {
+      background: linear-gradient(180deg, #171411 0%, #1e1a17 100%);
+      color: var(--ivory);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 86% 15%, rgba(185, 101, 73, .22), transparent 30rem),
+        radial-gradient(circle at 18% 75%, rgba(117, 134, 166, .18), transparent 28rem);
+      opacity: .9;
+    }
+
+    .video-section .section-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-section .kicker { color: var(--gold); }
+    .video-section h2 { color: var(--ivory); }
+    .video-section .lead { color: rgba(255, 250, 241, .68); }
+
+    .video-card-container {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .video-card {
+      position: relative;
+      border-radius: 38px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #0d0a08;
+      border: 1px solid rgba(255, 250, 241, .12);
+      box-shadow: 0 32px 90px rgba(0, 0, 0, .44);
+    }
+
+    .video-placeholder-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(30, 26, 23, .85), rgba(75, 58, 45, .85)), url('assets/John.png');
+      background-size: cover;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      transition: transform .4s ease;
+    }
+
+    .video-card:hover .video-placeholder-bg {
+      transform: scale(1.02);
+    }
+
+    .play-btn {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--ivory);
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 44px rgba(0,0,0,.36);
+      transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      border: none;
+      padding-left: 6px; /* center play triangle visually */
+    }
+
+    .play-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.12);
+    }
+
+    .video-info-box {
+      padding-left: clamp(0px, 2vw, 30px);
+    }
+
+    .video-info-box h3 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin: 0 0 18px;
+      color: var(--ivory);
+    }
+
+    .video-info-box p {
+      color: rgba(255, 250, 241, .70);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .video-info-box .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* Slideshow Section */
+    .slideshow-area {
+      position: relative;
+      border-radius: 42px;
+      background: rgba(255, 250, 241, .70);
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 80px rgba(66, 48, 32, .07);
+      padding: clamp(20px, 4vw, 42px);
+      margin-top: 56px;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #e2dbcf;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .6s cubic-bezier(0.25, 1, 0.5, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Text Slide Variant for Custom Messages */
+    .slide.text-slide {
+      background: linear-gradient(135deg, #e7ded1 0%, #ded6c9 100%);
+      padding: clamp(24px, 5vw, 64px);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide.text-slide p {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 3.1rem);
+      line-height: 1.15;
+      font-style: italic;
+      color: #352e2a;
+      max-width: 720px;
+      margin: 0 auto 24px;
+      text-wrap: pretty;
+    }
+
+    .slide.text-slide span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--terracotta-dark);
+    }
+
+    .slideshow-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: calc(100% - clamp(16px, 4vw, 48px));
+      left: clamp(8px, 2vw, 24px);
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .slide-arrow {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(255, 250, 241, .90);
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: transform .25s ease, background .25s ease;
+      pointer-events: auto;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+
+    .slide-arrow:hover {
+      transform: scale(1.08);
+      background: var(--ivory);
+    }
+
+    .slide-arrow svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .slide-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--soft);
+      cursor: pointer;
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .slide-dot.active {
+      background: var(--terracotta);
+      transform: scale(1.22);
+    }
+
+    /* Obituary and Life details */
     .obituary-section {
       background: var(--charcoal);
       color: var(--ivory);
@@ -616,7 +918,9 @@
       .nav-links { display: none; }
       .hero-inner,
       .obituary-section .section-inner,
-      .survivors {
+      .survivors,
+      .concert-tribute,
+      .video-card-container {
         grid-template-columns: 1fr;
       }
       .portrait-wrap {
@@ -634,16 +938,21 @@
         left: 18px;
         bottom: 28px;
       }
+      .video-info-box {
+        padding-left: 0;
+        margin-top: 18px;
+      }
     }
 
     @media (max-width: 560px) {
       .hero { padding: 96px 16px 52px; }
       .section, .quote-band { padding-left: 16px; padding-right: 16px; }
-      h1 { font-size: clamp(4.4rem, 21vw, 6rem); }
+      h1 { font-size: clamp(3.4rem, 16vw, 5.5rem); }
       .portrait-card { border-radius: 34px; transform: none; }
       .portrait-card img { border-radius: 25px; }
       .caption-card { position: relative; left: auto; bottom: auto; width: auto; margin: -22px 18px 0; z-index: 4; }
-      .tribute-card, .detail-card, .survivors, .obituary-card { border-radius: 26px; }
+      .tribute-card, .detail-card, .survivors, .obituary-card, .concert-tribute, .slideshow-area, .video-card { border-radius: 26px; }
+      .slideshow-container { aspect-ratio: 4 / 3; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -661,9 +970,10 @@
     <div class="brand"><span class="brand-mark">J</span> In Loving Memory</div>
     <div class="nav-links">
       <a href="#life">His Life</a>
+      <a href="#slideshow">Slideshow</a>
+      <a href="#service-video">Memorial Video</a>
       <a href="#obituary">Obituary</a>
-      <a href="#details">Service</a>
-      <a href="#give">Give</a>
+      <a href="#details">Legacy</a>
     </div>
   </nav>
 
@@ -673,11 +983,11 @@
         <div class="eyebrow">Marietta, Georgia • 1987–2026</div>
         <h1>John Fitzrobert Webb</h1>
         <p class="hero-subtitle">
-          A beloved son, brother, musician, and friend whose <strong>joyful spirit, compassionate heart, unwavering faith,</strong> and extraordinary musical gift will be remembered always.
+          Welcome to John’s tribute space. Arrived here from the poster at the <strong>tribute concert</strong> at Ponce City Market in Atlanta? Explore his life, music, and lasting legacy.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#obituary">Read John’s story</a>
-          <a class="button secondary" href="#details">Celebration details</a>
+          <a class="button primary" href="#slideshow">View photo slideshow</a>
+          <a class="button secondary" href="#service-video">Watch memorial service</a>
         </div>
         <div class="memory-strip" aria-label="John remembered as">
           <div class="memory-pill"><span>Musician</span><small>Piano & drums</small></div>
@@ -701,6 +1011,15 @@
   <main>
     <section class="section" id="life">
       <div class="section-inner">
+        
+        <!-- Tribute Concert Acknowledgments -->
+        <div class="concert-tribute">
+          <h3><span>Tribute Concert</span>Ponce City Market<br />Atlanta</h3>
+          <p>
+            A heartfelt thank you to <strong>David Collins Band</strong> and <strong>Shatoya</strong> for their beautiful support, music, and dedication in making the tribute concert a powerful celebration of John's incredible life and legacy.
+          </p>
+        </div>
+
         <div class="section-heading">
           <div class="kicker">A life that blessed others</div>
           <h2>Creative, joyful, faithful, and deeply loved.</h2>
@@ -728,11 +1047,97 @@
       </div>
     </section>
 
+    <!-- Memory Slideshow Section -->
+    <section class="section" id="slideshow" style="background: rgba(255, 250, 241, .36); border-top: 1px solid var(--line);">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Memories in frame</div>
+          <h2>The slideshow of John's life.</h2>
+          <p class="lead">A curated collection of public-safe photos displaying John's journey, passions, and moments shared with those he loved.</p>
+        </div>
+
+        <div class="slideshow-area">
+          <div class="slideshow-container" id="slider">
+            
+            <!-- Slide 1: Watercolor Portrait -->
+            <div class="slide active">
+              <img src="assets/John.png" alt="Watercolor portrait of John Fitzrobert Webb" />
+            </div>
+
+            <!-- Slide 2: Musical Quote -->
+            <div class="slide text-slide">
+              <p>"Music was one of his greatest passions and brought joy not only to him but also to everyone who had the privilege of hearing him play."</p>
+              <span>A gifted pianist & drummer</span>
+            </div>
+
+            <!-- Slide 3: Interactive Instruction Slide (Practical Placeholder) -->
+            <div class="slide text-slide">
+              <p>"John's infectious smile, engaging personality, and genuine kindness left a lasting impression on all who knew him."</p>
+              <span>Forever in our hearts</span>
+            </div>
+
+          </div>
+
+          <div class="slideshow-nav">
+            <button class="slide-arrow" id="prev-btn" aria-label="Previous slide">
+              <svg viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="slide-arrow" id="next-btn" aria-label="Next slide">
+              <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <div class="slideshow-dots" id="slider-dots">
+            <span class="slide-dot active"></span>
+            <span class="slide-dot"></span>
+            <span class="slide-dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memorial Service Video Section -->
+    <section class="section video-section" id="service-video">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Service Archive</div>
+          <h2>The Memorial Service Video.</h2>
+          <p class="lead">A recording of the celebration of John's life held at Stonebridge Church in Marietta, Georgia.</p>
+        </div>
+
+        <div class="video-card-container">
+          <div class="video-card">
+            <div class="video-placeholder-bg">
+              <a href="https://vimeo.com/event/6037295/dece23c342?fl=so&fe=fs" target="_blank" class="play-btn" aria-label="Play video on Vimeo">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="video-info-box">
+            <div class="meta-badge">
+              <svg style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; fill: currentColor; margin-right: 4px;" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+              </svg>
+              Wednesday, July 8, 2026
+            </div>
+            <h3>Watch the Full Celebration</h3>
+            <p>
+              Click play to watch the archived live broadcast of the service celebrating John's extraordinary musical gift, unwavering faith, and compassionate heart. Hosted securely on Vimeo.
+            </p>
+            <a class="button primary" href="https://vimeo.com/event/6037295/dece23c342?fl=so&fe=fs" target="_blank">
+              Open Video on Vimeo &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section (Obituary) -->
     <section class="section obituary-section" id="obituary">
       <div class="section-inner">
         <div class="section-heading">
-          <div class="kicker">Obituary</div>
-          <h2>In loving memory.</h2>
+          <div class="kicker">The Story of His Life</div>
+          <h2>John’s Journey.</h2>
           <p class="lead">Published by the Marietta Daily Journal on July 2, 2026.</p>
         </div>
 
@@ -750,21 +1155,33 @@
       <div class="quote">His life was a blessing, and his memory will forever remain in the hearts of all who <span>knew and loved him.</span></div>
     </section>
 
+    <!-- Legacy / Contribution details -->
     <section class="section" id="details">
       <div class="section-inner">
         <div class="section-heading">
-          <div class="kicker">Celebration and remembrance</div>
-          <h2>Gathering to remember John.</h2>
+          <div class="kicker">Honoring John</div>
+          <h2>Living Legacy.</h2>
         </div>
 
         <div class="details-grid">
           <article class="detail-card">
-            <h3>Celebration of Life</h3>
-            <p><strong>Wednesday, July 8, 2026 • 11:00 a.m.</strong><br />Stonebridge Church<br />675 Tower Road<br />Marietta, GA 30060</p>
+            <h3>The Memorial Service</h3>
+            <p>
+              John’s celebration of life took place on <strong>Wednesday, July 8, 2026, at 11:00 a.m.</strong> at:<br /><br />
+              <strong>Stonebridge Church</strong><br />
+              675 Tower Road<br />
+              Marietta, GA 30060
+            </p>
           </article>
-          <article class="detail-card" id="give">
-            <h3>In lieu of flowers</h3>
-            <p>Memorial contributions may be made to:<br /><strong>The Extension</strong><br />1507 Church Street Ext.<br />Marietta, GA 30060<br />(770) 590-9075</p>
+          <article class="detail-card">
+            <h3>Memorial Contributions</h3>
+            <p>
+              In lieu of flowers, memorial contributions may be made in honor of John’s compassionate and servant heart to:<br /><br />
+              <strong>The Extension</strong><br />
+              1507 Church Street Ext.<br />
+              Marietta, GA 30060<br />
+              (770) 590-9075
+            </p>
           </article>
         </div>
 
@@ -780,5 +1197,91 @@
     <span class="name">John Fitzrobert Webb</span>
     Beloved son, brother, musician, and friend • 1987–2026
   </footer>
+
+  <script>
+    // Slideshow interactive controller
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.slide-dot');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      let currentIndex = 0;
+      let timer = null;
+
+      function updateSlide(index) {
+        // bounds checking
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        
+        currentIndex = index;
+
+        // update active classes
+        slides.forEach((slide, i) => {
+          if (i === currentIndex) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        dots.forEach((dot, i) => {
+          if (i === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      function nextSlide() {
+        updateSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        updateSlide(currentIndex - 1);
+      }
+
+      // click listeners
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoplay();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoplay();
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          updateSlide(index);
+          resetAutoplay();
+        });
+      });
+
+      // autoplay setup
+      function startAutoplay() {
+        timer = setInterval(nextSlide, 7000); // 7 seconds
+      }
+
+      function resetAutoplay() {
+        clearInterval(timer);
+        startAutoplay();
+      }
+
+      // support keyboard arrow keys
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+          nextSlide();
+          resetAutoplay();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
+          resetAutoplay();
+        }
+      });
+
+      startAutoplay();
+    });
+  </script>
 </body>
 </html>
