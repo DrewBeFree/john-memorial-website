@@ -134,6 +134,41 @@
       align-items: start;
       padding: clamp(130px, 13vh, 170px) 24px clamp(72px, 9vh, 112px);
       position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient drifting light orbs (placeholder fancy effect — tune later) */
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: .5;
+      animation: orbDrift 18s ease-in-out infinite alternate;
+    }
+
+    .hero::before {
+      width: clamp(320px, 44vw, 640px);
+      height: clamp(320px, 44vw, 640px);
+      top: -8%;
+      right: -6%;
+      background: radial-gradient(circle at 30% 30%, rgba(202, 168, 90, .55), rgba(185, 101, 73, .28) 60%, transparent 75%);
+    }
+
+    .hero::after {
+      width: clamp(280px, 36vw, 540px);
+      height: clamp(280px, 36vw, 540px);
+      bottom: -12%;
+      left: -8%;
+      background: radial-gradient(circle at 60% 40%, rgba(117, 134, 166, .5), rgba(167, 146, 184, .30) 55%, transparent 75%);
+      animation-delay: -9s;
+    }
+
+    @keyframes orbDrift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to   { transform: translate3d(3vw, -3vh, 0) scale(1.14); }
     }
 
     .hero-inner {
@@ -160,6 +195,26 @@
       text-transform: uppercase;
     }
 
+    .memory-line {
+      margin-bottom: 14px;
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: var(--terracotta-dark);
+    }
+
+    .memory-line::after {
+      content: "";
+      display: block;
+      width: 76px;
+      height: 2px;
+      margin-top: 8px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
     .eyebrow::before {
       content: "";
       width: 8px;
@@ -178,6 +233,18 @@
       font-weight: 700;
       color: #211914;
       text-wrap: balance;
+      background: linear-gradient(110deg, #211914 30%, var(--terracotta) 46%, var(--gold) 54%, #211914 70%);
+      background-size: 240% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: nameSheen 10s ease-in-out infinite;
+    }
+
+    /* Gentle shimmering sheen across the name (placeholder fancy effect) */
+    @keyframes nameSheen {
+      0%, 100% { background-position: 125% 0; }
+      50%      { background-position: -25% 0; }
     }
 
     .hero-subtitle {
@@ -923,10 +990,23 @@
       .video-card-container {
         grid-template-columns: 1fr;
       }
+      /* Mobile hero: place the portrait between "In Loving Memory" and the date,
+         and keep it above the fold */
+      .hero { padding-top: 92px; }
+      .hero-inner { gap: 0; }
+      .hero-inner > div:first-child { display: contents; }
+      .memory-line { display: none; }
       .portrait-wrap {
-        margin: 0 auto;
-        max-width: 520px;
+        order: 1;
+        margin: 6px auto 18px;
+        max-width: min(64vw, 300px);
       }
+      .portrait-card img { aspect-ratio: 3 / 4; max-height: 38svh; }
+      .eyebrow { order: 2; margin: 0 auto; }
+      h1 { order: 3; text-align: center; margin-top: 16px; }
+      .hero-subtitle { order: 4; text-align: center; margin-left: auto; margin-right: auto; }
+      .hero-actions { order: 5; justify-content: center; margin: 24px 0 30px; }
+      .memory-strip { order: 6; margin: 0 auto; }
       .tribute-grid,
       .details-grid {
         grid-template-columns: 1fr;
@@ -980,6 +1060,7 @@
   <header class="hero">
     <div class="hero-inner">
       <div>
+        <div class="memory-line">In Loving Memory</div>
         <div class="eyebrow">Marietta, Georgia • 1987–2026</div>
         <h1>John Fitzrobert Webb</h1>
         <p class="hero-subtitle">
