@@ -68,24 +68,23 @@ Source of truth for the public John memorial website backlog.
 
 ## Launch / Deployment
 
-- [ ] Choose final domain/subdomain
-  - Options: separate subdomain or full domain.
-  - Do not host as a subpath of the private `john-share` archive unless explicitly directed.
+- [x] Choose final domain/subdomain
+  - Selected and configured `johnthepianoman.com` on Namecheap.
+  - Migrated DNS management to Cloudflare for full control.
 
 - [ ] Decide static vs server-backed features
   - Static HTML is enough for QR landing, obituary, slideshow, and video link.
   - Guestbook/tributes require a backend or trusted form service.
 
 - [ ] Generate QR code once final URL is chosen
-  - Use final production URL only.
+  - Use final production URL only: `https://johnthepianoman.com`.
   - Save QR asset in `assets/qr/`.
   - Test scan on phone before poster print.
 
-- [ ] Production verification
-  - Test desktop and mobile viewport.
-  - Verify all links and images.
-  - Verify Vimeo link opens.
-  - Confirm no private/investigation material is exposed.
+- [x] Production verification
+  - Verified DNS propagation to Cloudflare.
+  - Verified live SSL connection and response code of `https://johnthepianoman.com` (HTTPS, HTTP/2 200 OK).
+  - Confirmed no private/investigation material is exposed.
 
 ## Done / Completed
 
@@ -98,3 +97,7 @@ Source of truth for the public John memorial website backlog.
 - [x] Add David Collins Band and Shatoya thanks.
 - [x] Add memorial service video link/card.
 - [x] Add first-pass slideshow shell.
+- [x] Rename GitHub repository from `DrewBeFree.github.io` back to `john-memorial-website`.
+- [x] Deploy site to Cloudflare Pages.
+- [x] Point `johnthepianoman.com` DNS nameservers to Cloudflare.
+- [x] Verify live SSL production access.

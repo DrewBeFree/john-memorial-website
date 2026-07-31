@@ -20,6 +20,8 @@
 - Source materials (memorial-photos, evidence-photos, static HTML scaffolding) exist in `/mnt/data/Documents/12-john/`.
 - `memorial-photos/` and `.private/` curation rules apply: keep sensitive/private items filesystem-only unless explicitly requested for public site.
 - Related existing: `john-share` (private PIN-protected archive site), `memorial-project` (stub).
+- **Hosting & Deployment:** Fully migrated from GitHub Pages to Cloudflare Pages. Site is deployed from the `main` branch of `https://github.com/DrewBeFree/john-memorial-website.git`. 
+- **Domain:** Configured with custom apex domain `https://johnthepianoman.com` under Cloudflare DNS nameservers (`camilo.ns.cloudflare.com` and `emma.ns.cloudflare.com`), with Namecheap handling the registration.
 
 ## Versioning
 - Local git repo initialized in `/home/drew/workspace/john-memorial-website/`.
@@ -29,8 +31,8 @@
 
 ## Tasks
 - Backlog maintained in `TASKS.md`.
-- Completed: QR/concert-facing copy, David Collins Band and Shatoya thanks, Vimeo memorial service video card/link, first-pass slideshow shell, updated hero CTA hierarchy, historical memorial-service wording.
-- Still open: curate public photo set, add final captions, choose launch domain/subdomain, generate production QR code.
+- Completed: QR/concert-facing copy, David Collins Band and Shatoya thanks, Vimeo memorial service video card/link, first-pass slideshow shell, updated hero CTA hierarchy, historical memorial-service wording, repository rename, Cloudflare Pages hosting setup, custom domain routing, and production verification.
+- Still open: curate public photo set, add final captions, generate production QR code.
 
 ## Verification
 - `index.html` written successfully: 37,605 bytes after QR-code tribute concert revision.
@@ -40,13 +42,12 @@
 - Content checks passed for: `Ponce City Market`, `David Collins Band`, `Shatoya`, Vimeo memorial service URL, `View photo slideshow`, and `Watch memorial service`.
 - Temporary local preview served successfully on `127.0.0.1:41731`.
 - Chrome headless screenshot captured at `preview-home-updated.png`; visual inspection confirmed tribute concert context and thanks are visible above the fold/lower hero area, with no obvious broken image, text overlap, or contrast problem.
+- **Production Verification:** Tested DNS resolution of `johnthepianoman.com` pointing to Cloudflare. Executed live HTTP connection tests which returned a healthy `HTTP/2 200 OK` response over HTTPS.
 
 ## Next Steps / Open Items
 - Curate public-safe real photos for slideshow. Current `memorial-photos/` folder has no usable images yet.
-- Decide final domain/subdomain and hosting target.
-- Generate QR code after final production URL is chosen.
+- Generate QR code now that final production URL `https://johnthepianoman.com` is chosen and live.
 - Consider adding tribute / guestbook functionality. If public submissions are needed, static HTML will require a small server/backend or third-party form service.
-- Decide whether to keep this as static HTML or migrate into a framework before launch.
 - Read STATE.md before any work; append changes after each session.
 
 **Update this file after every session.**
