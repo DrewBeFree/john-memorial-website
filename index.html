@@ -298,39 +298,7 @@
       transform: translateY(-2px);
     }
 
-    .memory-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 640px;
-    }
 
-    .memory-pill {
-      padding: 15px 16px;
-      border-radius: 20px;
-      background: rgba(255, 250, 241, .68);
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 38px rgba(53, 39, 27, .06);
-    }
-
-    .memory-pill span {
-      display: block;
-      margin-bottom: 4px;
-      font-family: var(--serif);
-      font-size: 24px;
-      line-height: 1;
-      font-weight: 700;
-      color: var(--terracotta-dark);
-    }
-
-    .memory-pill small {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
 
     .portrait-wrap {
       position: relative;
@@ -1006,14 +974,11 @@
       h1 { order: 3; text-align: center; margin-top: 16px; }
       .hero-subtitle { order: 4; text-align: center; margin-left: auto; margin-right: auto; }
       .hero-actions { order: 5; justify-content: center; margin: 24px 0 30px; }
-      .memory-strip { order: 6; margin: 0 auto; }
       .tribute-grid,
       .details-grid {
         grid-template-columns: 1fr;
       }
-      .memory-strip {
-        grid-template-columns: 1fr;
-      }
+
       .caption-card {
         left: 18px;
         bottom: 28px;
@@ -1070,11 +1035,7 @@
           <a class="button primary" href="#slideshow">View photo slideshow</a>
           <a class="button secondary" href="#service-video">Watch memorial service</a>
         </div>
-        <div class="memory-strip" aria-label="John remembered as">
-          <div class="memory-pill"><span>Musician</span><small>Piano & drums</small></div>
-          <div class="memory-pill"><span>Friend</span><small>Loyal & kind</small></div>
-          <div class="memory-pill"><span>Faithful</span><small>Servant’s heart</small></div>
-        </div>
+
       </div>
 
       <div class="portrait-wrap" aria-label="Hero portrait of John Webb">
