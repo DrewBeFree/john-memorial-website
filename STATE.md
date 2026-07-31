@@ -14,6 +14,7 @@
 - New content direction implemented: this is a QR-code destination from a poster at a tribute concert for John at Ponce City Market in Atlanta.
 - The July 8 memorial service is treated as a past event; copy no longer presents it as upcoming.
 - Prominent sincere thanks added for David Collins Band and Shatoya.
+- Removed redundant hero memory pills (Musician, Friend, Faithful) to resolve duplicate cards without descriptions, keeping the full editorial cards in the main section.
 - Memorial service video link added: `https://vimeo.com/event/6037295/dece23c342?fl=so&fe=fs`.
 - First-pass slideshow experience added with hero portrait + text slides. Real photo slides are pending because `/mnt/data/Documents/12-john/memorial-photos/` currently contains only `.gitkeep`.
 - This is intended to be a separate public site on a different subdomain or possibly its own full domain; do not treat it as a subpath of the private `john-share` investigation archive.
@@ -35,14 +36,14 @@
 - Still open: curate public photo set, add final captions, generate production QR code.
 
 ## Verification
-- `index.html` written successfully: 37,605 bytes after QR-code tribute concert revision.
+- `index.html` written successfully: 42,578 bytes after removing redundant hero memory pills.
 - `assets/John.png` exists and is a valid PNG: 1054 × 1405 RGB.
 - `assets/favicon.svg` added and linked.
 - Local HTML asset check passed: no missing local `src`/`href` references.
 - Content checks passed for: `Ponce City Market`, `David Collins Band`, `Shatoya`, Vimeo memorial service URL, `View photo slideshow`, and `Watch memorial service`.
 - Temporary local preview served successfully on `127.0.0.1:41731`.
 - Chrome headless screenshot captured at `preview-home-updated.png`; visual inspection confirmed tribute concert context and thanks are visible above the fold/lower hero area, with no obvious broken image, text overlap, or contrast problem.
-- **Production Verification:** Tested DNS resolution of `johnthepianoman.com` pointing to Cloudflare. Executed live HTTP connection tests which returned a healthy `HTTP/2 200 OK` response over HTTPS.
+- **Production Verification:** Tested DNS resolution of `johnthepianoman.com` pointing to Cloudflare. Executed live HTTP connection tests which returned a healthy `HTTP/2 200 OK` response over HTTPS. Pushed update on 2026-07-31 to trigger auto-redeploy of the cleaned up layout.
 
 ## Next Steps / Open Items
 - Curate public-safe real photos for slideshow. Current `memorial-photos/` folder has no usable images yet.
