@@ -13,7 +13,7 @@
 - Current design direction: top-of-the-line, art-forward, warm editorial memorial site with polished typography, responsive layout, hero portrait, QR-code concert context, slideshow, memorial service video link, obituary, donation information, and survivors section.
 - New content direction implemented: this is a QR-code destination from a poster at a tribute concert for John at Ponce City Market in Atlanta.
 - The July 8 memorial service is treated as a past event; copy no longer presents it as upcoming.
-- Prominent sincere thanks added for David Collins Band and Shatoya.
+- Prominent event card updated for Dave Collins Band at Ponce City Market in Atlanta on August 8 at 7:00 PM, with sincere thanks to Dave Collins Band and Shatoya.
 - Removed redundant hero memory pills (Musician, Friend, Faithful) to resolve duplicate cards without descriptions, keeping the full editorial cards in the main section.
 - Memorial service video link added: `https://vimeo.com/event/6037295/dece23c342?fl=so&fe=fs`.
 - First-pass slideshow experience added with hero portrait + text slides. Real photo slides are pending because `/mnt/data/Documents/12-john/memorial-photos/` currently contains only `.gitkeep`.
@@ -40,7 +40,7 @@
 - `assets/John.png` exists and is a valid PNG: 1054 × 1405 RGB.
 - `assets/favicon.svg` added and linked.
 - Local HTML asset check passed: no missing local `src`/`href` references.
-- Content checks passed for: `Ponce City Market`, `David Collins Band`, `Shatoya`, Vimeo memorial service URL, `View photo slideshow`, and `Watch memorial service`.
+- Content checks passed for: `Ponce City Market`, `Dave Collins Band`, `August 8 at 7:00 PM`, `Shatoya`, Vimeo memorial service URL, `View photo slideshow`, and `Watch memorial service`.
 - Temporary local preview served successfully on `127.0.0.1:41731`.
 - Chrome headless screenshot captured at `preview-home-updated.png`; visual inspection confirmed tribute concert context and thanks are visible above the fold/lower hero area, with no obvious broken image, text overlap, or contrast problem.
 - **Production Verification:** Tested DNS resolution of `johnthepianoman.com` pointing to Cloudflare. Executed live HTTP connection tests which returned a healthy `HTTP/2 200 OK` response over HTTPS. Pushed update on 2026-07-31 to trigger auto-redeploy of the cleaned up layout.
